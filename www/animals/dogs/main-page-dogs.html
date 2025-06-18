@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cãotinho Feliz - Adoção</title>
+    <link rel="stylesheet" href="../../styles/styles.css">
+</head>
+<body>
+    <header class="navbar-transparente">
+        <nav>
+            <a href="../../index.html" class="logo">
+                <img src="../../images/logo.png" alt="Cãotinho Feliz Logo" class="logo-img">
+            </a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburguer">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </label>
+            <ul class="links-navegacao">
+                <li><a href="../../index.html">Início</a></li>
+                <li><a href="animals/dogs/main-page-dogs.html">Cães para Adoção</a></li>
+                <li><a href="#">Processo de Adoção</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="#">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="adocao">
+        <h2>Cães à Espera de um Lar</h2>
+        <div class="filtros">
+            <p>Filtrar por:</p>
+            <button class="filtro-btn" onclick="loadDogs('all')">Todos</button>
+            <button class="filtro-btn" onclick="loadDogs('small')">Porte Pequeno</button>
+            <button class="filtro-btn" onclick="loadDogs('medium')">Porte Médio</button>
+            <button class="filtro-btn" onclick="loadDogs('big')">Porte Grande</button>
+        </div>
+
+        <div id="dog-cards-container">
+            <div class="cao-card">
+                <div class="cao-imagem" style="background-image: url('https://images.unsplash.com/photo-1568681437233-9f973f934b8d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80')"></div>
+                <div class="cao-info">
+                    <h3>Max</h3>
+                    <p class="detalhes">Macho • 4 anos • Porte grande</p>
+                    <ul>
+                        <li><strong>Raça:</strong> Labrador</li>
+                        <li><strong>Temperamento:</strong> Amigável e protetor</li>
+                        <li><strong>História:</strong> Abandonado por mudança de dono</li>
+                    </ul>
+                    <a href="#" class="botao">Quero Adotar</a>
+                </div>
+            </div>
+            <div class="cao-card">
+                <div class="cao-imagem" style="background-image: url('https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80')"></div>
+                <div class="cao-info">
+                    <h3>Bobi</h3>
+                    <p class="detalhes">Macho • 2 anos • Porte médio</p>
+                    <ul>
+                        <li><strong>Raça:</strong> Misto</li>
+                        <li><strong>Temperamento:</strong> Brincalhão e energético</li>
+                        <li><strong>História:</strong> Resgatado de um abrigo superlotado</li>
+                    </ul>
+                    <a href="#" class="botao">Quero Adotar</a>
+                </div>
+            </div>
+            <div class="cao-card">
+                <div class="cao-imagem" style="background-image: url('https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80')"></div>
+                <div class="cao-info">
+                    <h3>Luna</h3>
+                    <p class="detalhes">Fêmea • 3 anos • Porte pequeno</p>
+                    <ul>
+                        <li><strong>Raça:</strong> Misto</li>
+                        <li><strong>Temperamento:</strong> Calma e afetuosa</li>
+                        <li><strong>História:</strong> Encontrada na rua</li>
+                    </ul>
+                    <a href="#" class="botao">Quero Adotar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Cãotinho Feliz. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="../../scripts/scripts.js"></script>
+</body>
+</html>
