@@ -9,8 +9,8 @@ function loadDogs(size) {
         .then(html => {
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, 'text/html');
-            const cards = doc.querySelector('#dog-cards-container')?.innerHTML || '';
-            document.getElementById('dog-cards-container').innerHTML = cards;
+            const cards = doc.querySelector('#cards-container')?.innerHTML || '';
+            document.getElementById('cards-container').innerHTML = cards;
         })
         .catch(error => console.error('Error loading dogs:', error));
 }

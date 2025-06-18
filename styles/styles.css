@@ -57,15 +57,19 @@ nav {
     transition: all 0.3s ease;
 }
 
+
 .menu-toggle:checked ~ .hamburguer .linha:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);
+    background-color: #4a2c0a;
 }
 
 .menu-toggle:checked ~ .hamburguer .linha:nth-child(2) {
+    background-color: #4a2c0a;
     opacity: 0;
 }
 
 .menu-toggle:checked ~ .hamburguer .linha:nth-child(3) {
+    background-color: #4a2c0a;
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
@@ -144,7 +148,7 @@ nav {
 
 /* Sobre Nós */
 .sobre-nos {
-    padding: 4rem 1rem;
+    padding: 8rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -169,7 +173,6 @@ nav {
 
 .sobre-conteudo {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     gap: 2rem;
     padding: 0 1rem;
@@ -271,7 +274,7 @@ nav {
 
 /* Estilos para a página de adoção */
 .adocao {
-    padding: 10rem 1rem;
+    padding: 8rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -325,59 +328,78 @@ nav {
     color: #4a2c0a;
 }
 
-.cao-grid {
+#cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
+    justify-items: center;
+    padding: 0 1rem;
 }
 
-.cao-card {
+.card {
     background: white;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+    width: 100%; /* Take full grid cell width */
+    max-width: 22rem; /* Cap width at 280px */
+    min-height: 400px; /* Minimum height for uniformity */
+    display: flex;
+    flex-direction: column; /* Stack image and info vertically */
 }
 
-.cao-card:hover {
+.card:hover {
     transform: translateY(-5px);
 }
 
-.cao-imagem {
+.card-imagem {
     width: 100%;
-    height: 200px;
+    height: 18rem; /* Fixed height for images */
     background-size: cover;
     background-position: center;
 }
 
-.cao-info {
+.card-info {
     padding: 1.2rem;
+    flex-grow: 1; /* Fill remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content evenly */
 }
 
-.cao-info h3 {
-    font-size: clamp(1.5rem, 3vw, 1.8rem);
+.card-info h3 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem); /* Responsive font size */
     color: #4a2c0a;
     margin-bottom: 0.5rem;
 }
 
-.cao-info .detalhes {
-    font-size: clamp(0.9rem, 1.8vw, 1rem);
+.card-info .detalhes {
+    font-size: clamp(0.8rem, 2vw, 0.9rem); /* Responsive font size */
     color: #666;
     margin-bottom: 1rem;
 }
 
-.cao-info ul {
+.card-info ul {
     list-style: none;
     padding: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: clamp(0.8rem, 2vw, 0.9rem); /* Responsive font size */
+    max-height: 100px; /* Limit list height */
+    overflow: hidden; /* Prevent overflow */
+    text-overflow: ellipsis; /* Truncate long text */
 }
 
-.cao-info li {
-    font-size: clamp(0.9rem, 1.8vw, 1rem);
+.card-info li {
     margin-bottom: 0.5rem;
 }
 
-.cao-info li strong {
+.card-info .botao {
+    margin-top: auto; /* Push button to bottom */
+    font-size: clamp(0.8rem, 2vw, 0.9rem); /* Responsive button text */
+}
+
+.card-info li strong {
     color: #4a2c0a;
 }
 
@@ -452,6 +474,16 @@ footer {
     .hero h1 {
         font-size: clamp(1.8rem, 4vw, 2.5rem);
     }
+
+    #cards-container {
+        gap: 1rem; /* Reduce gap for smaller screens */
+    }
+
+    .card {
+        max-width: 24rem; /* Reduce max width */
+        min-height: 360px; /* Adjust height for smaller screens */
+    }
+    
 }
 
 @media (max-width: 576px) {
@@ -464,7 +496,7 @@ footer {
         gap: 0.8rem;
     }
 
-    .cao-imagem {
+    .card-imagem {
         height: 180px;
     }
 
@@ -472,13 +504,22 @@ footer {
         padding: 0.7rem 1.5rem;
         font-size: 0.9rem;
     }
+
+    #cards-container {
+        padding: 0 0.5rem;
+    }
+
+    .card {
+        max-width: 100%; /* Full width within container */
+        min-height: 340px; /* Slightly shorter height */
+    }
+
+    .card-imagem {
+        height: 160px; /* Smaller image height */
+    }
 }
 
 @media (max-width: 400px) {
-    .cao-grid {
-        grid-template-columns: 1fr;
-    }
-
     .contacto-item {
         flex-direction: column;
         text-align: center;

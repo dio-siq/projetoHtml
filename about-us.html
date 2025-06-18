@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cãotinho Feliz</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header class="navbar-transparente">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Cãotinho Feliz Logo" class="logo-img">
+            </a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburguer">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </label>
+            <ul class="links-navegacao">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="animals/dogs/main-page-dogs.html">Cães para Adoção</a></li>
+                <li><a href="#">Processo de Adoção</a></li>
+                <li><a href="about-us.html">Sobre Nós</a></li>
+                <li><a href="#">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção Sobre a Equipa -->
+    <section class="sobre-nos">
+        <h2>A Nossa Equipa</h2>
+        <div class="about-us">
+            <div id="cards-container">
+                <!-- Membro 1 -->
+                <div class="card">
+                    <div class="card-imagem" style="background-image: url('../images/duarte.jpg');"></div>
+                    <div class="card-info">
+                        <h3>Duarte Silva</h3>
+                        <div class="detalhes">
+                            <p><strong>Função:</strong> Programadora Front-End</p>
+                            <p><strong>Interesses:</strong> Desenvolvimento web, jogos indie, ficção científica</p>
+                            <p><strong>Sobre:</strong> Apaixonada por criar interfaces intuitivas e dinâmicas. Venceu um hackathon em 2023.</p>
+                        </div>
+                        <ul>
+                            <li><a href="https://linkedin.com/in/anasofiamendes" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://github.com/anasofiamendes" target="_blank">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Membro 2 -->
+                <div class="card">
+                    <div class="card-imagem" style="background-image: url('../images/joao-pereira.jpg');"></div>
+                    <div class="card-info">
+                        <h3>Diogo Siqueira</h3>
+                        <div class="detalhes">
+                            <p><strong>Função:</strong> Programador Back-End</p>
+                            <p><strong>Interesses:</strong> Bases de dados, ciclismo, música clássica</p>
+                            <p><strong>Sobre:</strong> Especialista em servidores e APIs, adora otimizar sistemas para maior eficiência.</p>
+                        </div>
+                        <ul>
+                            <li><a href="https://linkedin.com/in/joaopereira" target="_blank">LinkedIn</a></li>
+                            <li><a href="https://github.com/joaopereira" target="_blank">GitHub</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>© 2025 Nome do Projeto. Todos os direitos reservados.</p>
+    </footer>
+
+    <style>
+        /* Estilos específicos para a página Sobre Nós */
+        .card-info a {
+            color: #ffb347;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .card-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</body>
+</html>
