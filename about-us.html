@@ -20,10 +20,15 @@
             </label>
             <ul class="links-navegacao">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="animals/dogs/main-page-dogs.html">Cães para Adoção</a></li>
-                <li><a href="#">Processo de Adoção</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Animais para Adoção <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="animals/dogs/main-page-dogs.html">Cães</a></li>
+                        <li><a href="animals/cats/main-page-cats.html">Gatos</a></li>
+                    </ul>
+                </li>
                 <li><a href="about-us.html">Sobre Nós</a></li>
-                <li><a href="#">Contactos</a></li>
+                <li><a href="contacts.html">Contactos</a></li>
             </ul>
         </nav>
     </header>
@@ -31,48 +36,77 @@
     <!-- Seção Sobre a Equipa -->
     <section class="sobre-nos">
         <h2>A Nossa Equipa</h2>
-        <div class="about-us">
-            <div id="cards-container">
-                <!-- Membro 1 -->
-                <div class="card">
-                    <div class="card-imagem" style="background-image: url('../images/duarte.jpg');"></div>
-                    <div class="card-info">
-                        <h3>Duarte Silva</h3>
-                        <div class="detalhes">
-                            <p><strong>Função:</strong> Programadora Front-End</p>
-                            <p><strong>Interesses:</strong> Desenvolvimento web, jogos indie, ficção científica</p>
-                            <p><strong>Sobre:</strong> Apaixonada por criar interfaces intuitivas e dinâmicas. Venceu um hackathon em 2023.</p>
-                        </div>
-                        <ul>
-                            <li><a href="https://linkedin.com/in/anasofiamendes" target="_blank">LinkedIn</a></li>
-                            <li><a href="https://github.com/anasofiamendes" target="_blank">GitHub</a></li>
-                        </ul>
+        <div id="cards-container">
+            <div class="card">
+                <div class="card-imagem" style="background-image: url('/images/joao-pereira.jpg');"></div>
+                <div class="card-info">
+                    <h3>Duarte Silva</h3>
+                    <div class="detalhes">
+                        <p><strong>Função:</strong> Programador Back-End</p>
+                        <p><strong>Interesses:</strong> Video Jogos, Programação e Campismo</p>
+                        <div class="sobre-texto" data-sobre="dasohfoahfhafh" style="display: none;"></div>
                     </div>
-                </div>
-                <!-- Membro 2 -->
-                <div class="card">
-                    <div class="card-imagem" style="background-image: url('../images/joao-pereira.jpg');"></div>
-                    <div class="card-info">
-                        <h3>Diogo Siqueira</h3>
-                        <div class="detalhes">
-                            <p><strong>Função:</strong> Programador Back-End</p>
-                            <p><strong>Interesses:</strong> Bases de dados, ciclismo, música clássica</p>
-                            <p><strong>Sobre:</strong> Especialista em servidores e APIs, adora otimizar sistemas para maior eficiência.</p>
-                        </div>
-                        <ul>
-                            <li><a href="https://linkedin.com/in/joaopereira" target="_blank">LinkedIn</a></li>
-                            <li><a href="https://github.com/joaopereira" target="_blank">GitHub</a></li>
-                        </ul>
-                    </div>
+                    <ul>
+                        <li>
+                            <a href="https://linkedin.com/in/joaopereira" target="_blank">
+                                <img src="/images/linkedin.png" alt="LinkedIn Icon" class="social-icon">
+                                LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/dio-siq" target="_blank">
+                                <img src="/images/github.png" alt="GitHub Icon" class="social-icon">
+                                GitHub
+                            </a>
+                        </li>
+                    </ul>
+                    <button class="botao ver-mais" onclick="showModal(this)" aria-expanded="false" aria-controls="modal-sobre">Ver Mais</button>
                 </div>
             </div>
+            <div class="card">
+                <div class="card-imagem" style="background-image: url('/images/joao-pereira.jpg');"></div>
+                <div class="card-info">
+                    <h3>Diogo Siqueira</h3>
+                    <div class="detalhes">
+                        <p><strong>Função:</strong> Programador Back-End</p>
+                        <p><strong>Interesses:</strong> Video Jogos, Programação e Campismo</p>
+                        <div class="sobre-texto" data-sobre="Tenho 23 anos e considero-me uma pessoa bem-disposta, responsável e com um sentido de humor sempre presente. Gosto de programar, jogar e aproveitar momentos ao ar livre. Especialmente acampar e estar em contacto com a natureza. Sou curioso por natureza, gosto de aprender coisas novas e estou sempre pronto para um desafio, seja ele no mundo digital ou numa aventura fora de portas." style="display: none;"></div>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="https://www.linkedin.com/in/diogo-siqueira-74ab88141/" target="_blank">
+                                <img src="/images/linkedin.png" alt="LinkedIn Icon" class="social-icon">
+                                LinkedIn
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/dio-siq" target="_blank">
+                                <img src="/images/github.png" alt="GitHub Icon" class="social-icon">
+                                GitHub
+                            </a>
+                        </li>
+                    </ul>
+                    <button class="botao ver-mais" onclick="showModal(this)" aria-expanded="false" aria-controls="modal-sobre">Ver Mais</button>
+                </div>
+            </div>
+            <!-- Add more cards as needed -->
         </div>
     </section>
+
+    <div class="modal" id="modal-sobre">
+        <div class="modal-content">
+            <h3 id="modal-nome"></h3>
+            <p id="modal-sobre-texto"></p>
+            <button class="botao fechar-modal" onclick="closeModal()">Fechar</button>
+        </div>
+    </div>
 
     <!-- Rodapé -->
     <footer>
         <p>© 2025 Nome do Projeto. Todos os direitos reservados.</p>
     </footer>
+
+    <script src="/scripts/scripts.js"></script>
 
     <style>
         /* Estilos específicos para a página Sobre Nós */
@@ -86,5 +120,6 @@
             text-decoration: underline;
         }
     </style>
+    <script src="/scripts/scripts.js"></script>
 </body>
 </html>

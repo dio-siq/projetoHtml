@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cãotinho Feliz - Contactos</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <header class="navbar-transparente">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Cãotinho Feliz Logo" class="logo-img">
+            </a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburguer">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </label>
+            <ul class="links-navegacao">
+                <li><a href="index.html">Início</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Animais para Adoção <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="animals/dogs/main-page-dogs.html">Cães</a></li>
+                        <li><a href="animals/cats/main-page-cats.html">Gatos</a></li>
+                    </ul>
+                </li>
+                <li><a href="about-us.html">Sobre Nós</a></li>
+                <li><a href="contacts.html">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contactos">
+        <h2>Entre em Contacto</h2>
+        <form class="contacto-form" action="mailto:[email protected]" method="POST" enctype="text/plain">
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="Nome" required placeholder="Nome">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="Email" required placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="Mensagem" required placeholder="Escreva a sua mensagem"></textarea>
+            </div>
+            <button type="submit" class="botao">Enviar Mensagem</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2025 Cãotinho Feliz - Centro de Adoção de Cães. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const dogName = urlParams.get('dogName');
+        if (dogName) {
+            const mensagemField = document.getElementById('mensagem');
+            mensagemField.value = `Estou interessado em adotar o cachorrinho/a ${dogName}.`;
+        }
+
+        const catName = urlParams.get('catName');
+        if (catName) {
+            const mensagemField = document.getElementById('mensagem');
+            mensagemField.value = `Estou interessado em adotar o gatinho/a ${catName}.`;
+        }
+
+        const visit = urlParams.get('visit');
+        if(visit){
+            const mensagemField = document.getElementById('mensagem');
+            mensagemField.value = `Estou interessado em visitar os vossos estabelecimentos.`;
+        }
+    </script>
+    <script src="/scripts/scripts.js"></script>
+</body>
+</html>

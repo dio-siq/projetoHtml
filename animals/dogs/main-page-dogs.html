@@ -20,10 +20,15 @@
             </label>
             <ul class="links-navegacao">
                 <li><a href="../../index.html">Início</a></li>
-                <li><a href="main-page-dogs.html">Cães para Adoção</a></li>
-                <li><a href="#">Processo de Adoção</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Animais para Adoção <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../dogs/main-page-dogs.html">Cães</a></li>
+                        <li><a href="../cats/main-page-cats.html">Gatos</a></li>
+                    </ul>
+                </li>
                 <li><a href="../../about-us.html">Sobre Nós</a></li>
-                <li><a href="#">Contactos</a></li>
+                <li><a href="../../contacts.html">Contactos</a></li>
             </ul>
         </nav>
     </header>
@@ -49,7 +54,7 @@
                         <li><strong>Temperamento:</strong> Amigável e protetor</li>
                         <li><strong>História:</strong> Abandonado por mudança de dono</li>
                     </ul>
-                    <a href="#" class="botao">Quero Adotar</a>
+                    <a href="../../contacts.html?dogName=Max" class="botao">Quero Adotar</a>
                 </div>
             </div>
             <div class="card">
@@ -62,7 +67,7 @@
                         <li><strong>Temperamento:</strong> Brincalhão e energético</li>
                         <li><strong>História:</strong> Resgatado de um abrigo superlotado</li>
                     </ul>
-                    <a href="#" class="botao">Quero Adotar</a>
+                    <a href="../../contacts.html?dogName=Bobi" class="botao">Quero Adotar</a>
                 </div>
             </div>
             <div class="card">
@@ -75,7 +80,7 @@
                         <li><strong>Temperamento:</strong> Calma e afetuosa</li>
                         <li><strong>História:</strong> Encontrada na rua</li>
                     </ul>
-                    <a href="#" class="botao">Quero Adotar</a>
+                    <a href="../../contacts.html?dogName=Misto" class="botao">Quero Adotar</a>
                 </div>
             </div>
         </div>
@@ -85,6 +90,7 @@
         <p>© Cãotinho Feliz. Todos os direitos reservados.</p>
     </footer>
 
+    <script src="../../scripts/scripts-adocao.js"></script>
     <script src="../../scripts/scripts.js"></script>
 </body>
 </html>

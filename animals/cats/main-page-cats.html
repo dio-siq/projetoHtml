@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cãotinho Feliz - Gatos para Adoção</title>
+    <link rel="stylesheet" href="../../styles/styles.css">
+    <style>
+        /* Cat-specific animations */
+        .cat-card:nth-child(1) .card-imagem {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .cat-card:nth-child(2) .card-imagem {
+            animation: pulse 2s ease infinite;
+        }
+        
+        .cat-card:nth-child(3) .card-imagem {
+            animation: tilt 4s ease-in-out infinite;
+        }
+        
+        .cat-card:nth-child(4) .card-imagem {
+            animation: bounce 2.5s ease infinite;
+        }
+        
+        .cat-card:nth-child(5) .card-imagem {
+            animation: blink 5s linear infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        
+        @keyframes tilt {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(2deg); }
+            75% { transform: rotate(-2deg); }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            25% { transform: translateY(-5px); }
+            50% { transform: translateY(0); }
+            75% { transform: translateY(-3px); }
+        }
+        
+        @keyframes blink {
+            0%, 45%, 55%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        /* Page header styling */
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../../images/cats-hero.jpg') no-repeat center/cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .page-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar-transparente">
+        <nav>
+            <a href="../../index.html" class="logo">
+                <img src="../../images/logo.png" alt="Cãotinho Feliz Logo" class="logo-img">
+            </a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="hamburguer">
+                <span class="linha"></span>
+                <span class="linha"></span>
+                <span class="linha"></span>
+            </label>
+            <ul class="links-navegacao">
+                <li><a href="../../index.html">Início</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Animais para Adoção <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../dogs/main-page-dogs.html">Cães</a></li>
+                        <li><a href="main-page-cats.html">Gatos</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../about-us.html">Sobre Nós</a></li>
+                <li><a href="../../contacts.html">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="adocao">
+        <h2>Gatos à Espera de um Lar</h2>
+        <div id="cards-container">
+            <!-- Cat 1 -->
+            <div class="card cat-card">
+                <div class="card-imagem" style="background-image: url('../../images/fotoCao1.jpg');"></div>
+                <div class="card-info">
+                    <h3>Luna</h3>
+                    <div class="detalhes">
+                        <p>Fêmea • 2 anos • SRD</p>
+                    </div>
+                    <ul>
+                        <li><strong>Temperamento:</strong> Calma e carinhosa</li>
+                        <li><strong>Saúde:</strong> Vacinada e castrada</li>
+                        <li><strong>Adotação:</strong> Ideal para apartamento</li>
+                    </ul>
+                    <a href="../../contacts.html?catName=Luna" class="botao ver-mais">Quero Adotar</a>
+                </div>
+            </div>
+            
+            <!-- Cat 2 -->
+            <div class="card cat-card">
+                <div class="card-imagem" style="background-image: url('../../images/fotoCao1.jpg');"></div>
+                <div class="card-info">
+                    <h3>Thor</h3>
+                    <div class="detalhes">
+                        <p>Macho • 1 ano • Persa</p>
+                    </div>
+                    <ul>
+                        <li><strong>Temperamento:</strong> Brincalhão e curioso</li>
+                        <li><strong>Saúde:</strong> Vacinado e castrado</li>
+                        <li><strong>Adotação:</strong> Precisa de espaço</li>
+                    </ul>
+                    <a href="../../contacts.html?catName=Thor" class="botao ver-mais">Quero Adotar</a>
+                </div>
+            </div>
+            
+            <!-- Cat 3 -->
+            <div class="card cat-card">
+                <div class="card-imagem" style="background-image: url('../../images/fotoCao1.jpg');"></div>
+                <div class="card-info">
+                    <h3>Mia</h3>
+                    <div class="detalhes">
+                        <p>Fêmea • 3 anos • Siamesa</p>
+                    </div>
+                    <ul>
+                        <li><strong>Temperamento:</strong> Sociável e vocal</li>
+                        <li><strong>Saúde:</strong> Vacinada e castrada</li>
+                        <li><strong>Adotação:</strong> Gosta de companhia</li>
+                    </ul>
+                    <a href="../../contacts.html?catName=Mia" class="botao ver-mais">Quero Adotar</a>
+                </div>
+            </div>
+            
+            <!-- Cat 4 -->
+            <div class="card cat-card">
+                <div class="card-imagem" style="background-image: url('../../images/fotoCao1.jpg');"></div>
+                <div class="card-info">
+                    <h3>Oliver</h3>
+                    <div class="detalhes">
+                        <p>Macho • 4 meses • SRD</p>
+                    </div>
+                    <ul>
+                        <li><strong>Temperamento:</strong> Energético e afetuoso</li>
+                        <li><strong>Saúde:</strong> Vacinado</li>
+                        <li><strong>Adotação:</strong> Ideal para famílias</li>
+                    </ul>
+                    <a href="../../contacts.html?catName=Oliver" class="botao ver-mais">Quero Adotar</a>
+                </div>
+            </div>
+            
+            <!-- Cat 5 -->
+            <div class="card cat-card">
+                <div class="card-imagem" style="background-image: url('../../images/fotoCao1.jpg');"></div>
+                <div class="card-info">
+                    <h3>Bella</h3>
+                    <div class="detalhes">
+                        <p>Fêmea • 5 anos • Maine Coon</p>
+                    </div>
+                    <ul>
+                        <li><strong>Temperamento:</strong> Dócil e tranquila</li>
+                        <li><strong>Saúde:</strong> Vacinada e castrada</li>
+                        <li><strong>Adotação:</strong> Perfeita para idosos</li>
+                    </ul>
+                    <a href="../../contacts.html?catName=Bella" class="botao ver-mais">Quero Adotar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Cãotinho Feliz - Centro de Adoção de Animais. Todos os direitos reservados.</p>
+    </footer>
+    <script src="../../scripts/scripts.js"></script>
+</body>
+</html>

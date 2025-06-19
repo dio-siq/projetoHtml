@@ -1,21 +1,48 @@
-function loadDogs(size) {
-    let url = 'main-page-dogs.html'; // Default to all dogs (current page)
-    if (size === 'big') url = 'big-dogs.html';
-    else if (size === 'medium') url = 'medium-dogs.html';
-    else if (size === 'small') url = 'small-dogs.html';
+ // Mobile dropdown functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const dropdown = this.parentElement;
+                dropdown.classList.toggle('active');
+            }
+        });
+    });
+});
 
-    fetch(url)
-        .then(response => response.text())
-        .then(html => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            const cards = doc.querySelector('#cards-container')?.innerHTML || '';
-            document.getElementById('cards-container').innerHTML = cards;
-        })
-        .catch(error => console.error('Error loading dogs:', error));
+function showModal(button) {
+    const modal = document.getElementById('modal-sobre');
+    const modalNome = document.getElementById('modal-nome');
+    const modalSobreTexto = document.getElementById('modal-sobre-texto');
+    const card = button.closest('.card');
+    const nome = card.querySelector('h3').textContent;
+    const sobreTexto = card.querySelector('.sobre-texto').dataset.sobre;
+
+    modalNome.textContent = nome;
+    modalSobreTexto.textContent = sobreTexto;
+    modal.classList.add('mostrar');
+    button.setAttribute('aria-expanded', 'true');
 }
 
-// Load all dogs by default on page load
-window.onload = function() {
-    loadDogs('all');
-};
+function closeModal() {
+    const modal = document.getElementById('modal-sobre');
+    modal.classList.remove('mostrar');
+    const verMaisButtons = document.querySelectorAll('.ver-mais');
+    verMaisButtons.forEach(button => button.setAttribute('aria-expanded', 'false'));
+}
+
+document.getElementById('modal-sobre').addEventListener('click', function(event) {
+    if (event.target === this) {
+        closeModal();
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeModal();
+    }
+});
+

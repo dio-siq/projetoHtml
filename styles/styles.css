@@ -1,4 +1,4 @@
-/* Reset e estilos base */
+/* Estilos base */
 * {
     margin: 0;
     padding: 0;
@@ -34,6 +34,67 @@ nav {
     height: 10vh; /* Adjust the height as needed */
     width: auto; /* Maintain aspect ratio */
     display: block; /* Ensures the image behaves as a block element */
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.dropdown-toggle .arrow {
+    font-size: 0.7rem;
+    transition: transform 0.3s;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 0.5rem 0;
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown:hover .dropdown-toggle .arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu a {
+    color: #4a2c0a !important;
+    padding: 0.5rem 1.5rem;
+    display: block;
+    text-shadow: none !important;
+    font-size: 1rem !important;
+    transition: all 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #ffb347;
+    color: white !important;
 }
 
 /* Menu Hamburguer */
@@ -129,7 +190,7 @@ nav {
 
 .botao {
     display: inline-block;
-    background: linear-gradient(to right, #ffb347, #ffcc33);
+    background: linear-gradient(to right, #ffb45e, #ffb45e);
     color: #4a2c0a;
     padding: 0.8rem 2rem;
     text-decoration: none;
@@ -148,7 +209,7 @@ nav {
 
 /* Sobre Nós */
 .sobre-nos {
-    padding: 8rem 1rem;
+    padding: 9rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -226,10 +287,11 @@ nav {
 
 /* Contactos */
 .contactos {
-    padding: 4rem 1rem;
+    padding: 10rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
+    padding-bottom: 3.5%;
 }
 
 .contactos h2 {
@@ -274,7 +336,7 @@ nav {
 
 /* Estilos para a página de adoção */
 .adocao {
-    padding: 8rem 1rem;
+    padding: 9rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -395,12 +457,145 @@ nav {
 }
 
 .card-info .botao {
+    border-radius: 10px;
     margin-top: auto; /* Push button to bottom */
     font-size: clamp(0.8rem, 2vw, 0.9rem); /* Responsive button text */
 }
 
 .card-info li strong {
     color: #4a2c0a;
+}
+
+.card-info ul a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between SVG and text */
+    color: #4a2c0a; /* Matches site text color */
+    text-decoration: none;
+}
+
+.card-info ul a:hover {
+    color: #ffb347; /* Matches links-navegacao hover */
+}
+
+.card-info ul svg {
+    vertical-align: middle;
+}
+
+.sobre-texto {
+    display: none; /* Initially hidden */
+    margin-top: 0.5rem; /* Matches spacing in .detalhes */
+    font-size: clamp(0.8rem, 2vw, 0.9rem); /* Matches .detalhes font size */
+    color: #666; /* Matches .detalhes text color */
+}
+
+.sobre-texto.mostrar {
+    display: block; /* Shown when 'mostrar' class is added */
+}
+
+.ver-mais {
+    padding: 0.5rem 1.5rem; /* Slightly smaller than .botao for compactness */
+    font-size: clamp(0.8rem, 2vw, 0.9rem); /* Matches .card-info text */
+    margin-top: 0.5rem; /* Spacing above button */
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Matches .navbar-transparente */
+    z-index: 200; /* Above .navbar-transparente */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.mostrar {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 15px; /* Matches .card */
+    padding: 1.5rem;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Matches .sobre-imagem */
+}
+
+.modal-content h3 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem); /* Matches .card-info h3 */
+    color: #4a2c0a;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    font-size: clamp(0.8rem, 2vw, 0.9rem); /* Matches .detalhes */
+    color: #666;
+    line-height: 1.7; /* Matches .sobre-texto */
+    margin-bottom: 1.5rem;
+}
+
+.fechar-modal {
+    padding: 0.5rem 1.5rem; /* Matches .ver-mais */
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+}
+
+.social-icon{
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+/* From dos contactos */
+.contacto-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: #4a2c0a;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    color: #333;
+    background: #fff;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ffb347;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 179, 71, 0.3);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.contacto-form .botao {
+    display: block;
+    margin: 0 auto;
 }
 
 /* Rodapé */
@@ -426,6 +621,36 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        display: none;
+        background-color: transparent;
+        box-shadow: none;
+        padding-left: 1.5rem;
+    }
+    
+    .dropdown-menu a {
+        color: #4a2c0a !important;
+        font-size: 1.2rem !important;
+    }
+    
+    .dropdown-menu a:hover {
+        background-color: transparent;
+        color: #ffb347 !important;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+    
+    .dropdown-toggle .arrow {
+        transform: rotate(0deg);
+    }
+    
+    .dropdown.active .dropdown-toggle .arrow {
+        transform: rotate(180deg);
+    }
+
     .hamburguer {
         display: block;
     }
@@ -483,6 +708,8 @@ footer {
         max-width: 24rem; /* Reduce max width */
         min-height: 360px; /* Adjust height for smaller screens */
     }
+
+    
     
 }
 
@@ -494,10 +721,6 @@ footer {
     .filtros {
         flex-direction: column;
         gap: 0.8rem;
-    }
-
-    .card-imagem {
-        height: 180px;
     }
 
     .botao {
@@ -514,9 +737,19 @@ footer {
         min-height: 340px; /* Slightly shorter height */
     }
 
-    .card-imagem {
-        height: 160px; /* Smaller image height */
+    .contacto-form {
+        padding: 0 0.5rem;
     }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem;
+    }
+
 }
 
 @media (max-width: 400px) {

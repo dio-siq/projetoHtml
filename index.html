@@ -20,10 +20,15 @@
             </label>
             <ul class="links-navegacao">
                 <li><a href="index.html">Início</a></li>
-                <li><a href="animals/dogs/main-page-dogs.html">Cães para Adoção</a></li>
-                <li><a href="#">Processo de Adoção</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Animais para Adoção <span class="arrow">▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="animals/dogs/main-page-dogs.html">Cães</a></li>
+                        <li><a href="animals/cats/main-page-cats.html">Gatos</a></li>
+                    </ul>
+                </li>
                 <li><a href="about-us.html">Sobre Nós</a></li>
-                <li><a href="#">Contactos</a></li>
+                <li><a href="contacts.html">Contactos</a></li>
             </ul>
         </nav>
     </header>
@@ -39,7 +44,7 @@
     <section class="sobre-nos">
         <h2>Sobre o Cãotinho Feliz</h2>
         <div class="sobre-conteudo">
-            <div class="sobre-texto">
+            <div class="sobre-texto" style="display: grid;">
                 <p>Fundado em 2025, o Cãotinho Feliz é um centro de adoção especializado em encontrar lares amorosos para cães abandonados.</p>
                 <p>Nossa missão:</p>
                 <ul>
@@ -74,11 +79,12 @@
                 <p>Rua dos Animais Felizes, 123<br>Lisboa</p>
             </div>
         </div>
-        <a href="#" class="botao">Marcar Visita</a>
+        <a href="contacts.html?visit=yes" class="botao">Marcar Visita</a>
     </section>
 
     <footer>
         <p>© Cãotinho Feliz - Centro de Adoção de Cães. Todos os direitos reservados.</p>
     </footer>
+    <script src="/scripts/scripts.js"></script>
 </body>
 </html>
